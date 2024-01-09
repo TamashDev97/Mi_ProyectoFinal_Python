@@ -3,8 +3,7 @@ import os
 
 def load_trainers_json():
     try:
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        json_path = os.path.join(current_dir, "Data", "Trainers.json")
+        json_path = os.path.join("data", "Trainers.json")
         with open(json_path, 'r') as archivo_json:
             lista_trainers = json.load(archivo_json)
             print("La lista de Trainers ha sido cargada")
@@ -21,10 +20,10 @@ def crear_trainer():
     Horario = input("Ingrese el horario del trainer: ")
     Ruta = input("Ingrese la ruta del trainer: ")
     trainer = {
-        'nombre': Nombre,
-        'apellido': Apellido,
-        'horario': Horario,
-        'ruta': Ruta
+        'Nombre': Nombre,
+        'Apellido': Apellido,
+        'Horario': Horario,
+        'Ruta': Ruta
     }
     lista_trainers.append(trainer)
     print("Se creó el trainer con éxito")
@@ -32,8 +31,7 @@ def crear_trainer():
 
 def guardar_json():
     try:
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        json_path = os.path.join(current_dir, "Data", "Trainers.json")
+        json_path = os.path.join("data", "Trainers.json")
         with open(json_path, 'w') as archivo_json:
             json.dump(lista_trainers, archivo_json, indent=2)
             print("La lista de trainers ha sido guardada")
@@ -45,29 +43,11 @@ def guardar_json():
         print(f"Error desconocido: {e}")
 
 def buscar_trainer():
-    print("Los trainers en campus son:")
-    def nom_ap_p(file):
-        try:
-            with open(file, 'r') as archivo_json:
-                data = json.load(archivo_json)
-                if all(entry.get('nombre') is not None and entry.get('apellido') is not None for entry in data):
-                    nombre_y_ape = [(entry['nombre'], entry['apellido']) for entry in data]
-                    return nombre_y_ape
-                else:
-                    print("El archivo JSON no tiene la estructura esperada (nombre y apellido).")
-                    return []
-        except FileNotFoundError:
-            print(f"El archivo no fue encontrado.")
-            return []
-        except Exception as e:
-            print(f"Error al cargar el archivo JSON: {type(e).__name__}: {e}")
-            return []
-
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    json_path = os.path.join(current_dir, "Data", "Trainers.json")
-    nombres_apellidos = nom_ap_p(json_path)
-    for Nombre, Apellido in nombres_apellidos:
-        print(f"{Nombre} {Apellido}")
+    nombre_trainer = input("Ingrese el nombre del trainer: ")
+    for trainer in lista_trainers:
+        if trainer['Nombre'] == nombre_trainer:
+            print(trainer)
+            break
 
 def modificar_trainer():
     nombre_buscar = input("Ingrese el nombre del trainer que desea modificar: ")
@@ -75,16 +55,16 @@ def modificar_trainer():
     encontrado = False
 
     for trainer in lista_trainers:
-        if trainer['nombre'] == nombre_buscar and trainer['apellido'] == apellido_buscar:
+        if trainer['Nombre'] == nombre_buscar and trainer['Apellido'] == apellido_buscar:
             nuevo_nombre = input("Ingrese el nuevo nombre del trainer: ")
             nuevo_apellido = input("Ingrese el nuevo apellido del trainer: ")
             nuevo_horario = input("Ingrese el nuevo horario del trainer: ")
             nuevo_ruta = input("Ingrese la nueva ruta del trainer: ")
 
-            trainer['nombre'] = nuevo_nombre
-            trainer['apellido'] = nuevo_apellido
-            trainer['horario'] = nuevo_horario
-            trainer['ruta'] = nuevo_ruta
+            trainer['Nombre'] = nuevo_nombre
+            trainer['Apellido'] = nuevo_apellido
+            trainer['Horario'] = nuevo_horario
+            trainer['Ruta'] = nuevo_ruta
 
             print("La información del trainer ha sido modificada con éxito")
             encontrado = True

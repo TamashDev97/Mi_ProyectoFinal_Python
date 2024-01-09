@@ -16,8 +16,7 @@ def guardar_json():
 
 def load_CampersData_json():
     try:
-        file_path = os.path.join("data", "CampersData.json")
-        with open(file_path, 'r') as archivo_json:
+        with open(os.path.join( "data", "campers.json"), 'w') as archivo_json:
             lista_campers = json.load(archivo_json)
             print("La lista de campers ha sido cargada")
             return lista_campers

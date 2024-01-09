@@ -4,7 +4,7 @@ from commons.utils import *
 
 def guardarMatricula_json():
     try:
-        file_path = os.path.join(os.getcwd(), "proyecto-python", "data", "CampersData.json")
+        file_path = os.path.join("data", "CampersData.json")
         with open(file_path, 'w') as archivo_json:
             json.dump(lista_matriculas, archivo_json, indent=2)
             print("La lista de matrículas ha sido guardada de manera exitosa")
@@ -17,7 +17,7 @@ def guardarMatricula_json():
 
 def cargarMatriculas_json():
     try:
-        file_path = os.path.join(os.getcwd(), "proyecto-python", "data", "CampersData.json")
+        file_path = os.path.join("data", "CampersData.json")
         with open(file_path, 'r') as archivo_json:
             lista_matriculas = json.load(archivo_json)
             print("La lista de matrículas ha sido cargada")
@@ -97,6 +97,6 @@ def buscarMatricula():
         except Exception as e:
             print(f"Error al cargar el archivo JSON: {type(e).__name__}: {e}")
 
-    json_path = os.path.join(os.getcwd(), "proyecto-python", "data", "CampersData.json")
+    json_path = os.path.join("data", "CampersData.json")
     palabra_ingresada = input("Ingrese el número de identificación del camper: ")
     buscar_por_id(json_path, palabra_ingresada)
