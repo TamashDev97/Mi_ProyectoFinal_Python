@@ -1,0 +1,41 @@
+[{
+    "Nombre": "Sergio",
+    "Apellido": "Vondra",
+    "Ruta": "Java",
+    "Horario": "Tarde 1"
+  }, {
+    "Nombre": "Camilo",
+    "Apellido": "Schrei",
+    "Ruta": "Java",
+    "Horario": "Tarde 2"
+  }, {
+    "Nombre": "Camilo",
+    "Apellido": "Schrei",
+    "Ruta": "NodeJs",
+    "Horario": "Tarde 1"
+  }, {
+    "Nombre": "Camilo",
+    "Apellido": "Schrei",
+    "Ruta": "NetCore",
+    "Horario": "Mañana 1"
+  }, {
+    "Nombre": "Santiago",
+    "Apellido": "Hesser",
+    "Ruta": "NodeJs",
+    "Horario": "Mañana 2"
+  }, {
+    "Nombre": "Sergio",
+    "Apellido": "Vondra",
+    "Ruta": "Java",
+    "Horario": "Tarde 2"
+  }, {
+    "Nombre": "Camilo",
+    "Apellido": "Schrei",
+    "Ruta": "NodeJs",
+    "Horario": "Mañana 1"
+  }, {
+    "Nombre": "Santiago",
+    "Apellido": "Hesser",
+    "Ruta": "NodeJs",
+    "Horario": "Tarde 2"
+  }]

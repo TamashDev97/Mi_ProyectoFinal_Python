@@ -1,0 +1,23 @@
+[
+    {
+      "Nombre": "A1",
+      "Ruta": "NoteJS",
+      "Modulo": "Fundamentos",
+      "Aula": "Sputnik",
+      "Trainer": "Santiago"
+    },
+    {
+      "Nombre": "A2",
+      "Ruta": "Java",
+      "Modulo": "Python",
+      "Aula": "Apolo",
+      "Trainer": "Sergio"
+    },
+    {
+        "Nombre": "A3",
+        "Ruta": "Netcore",
+        "Modulo":"Bases de Datos",
+        "Aula":"Artemis",
+        "Trainer":"Camilo"
+    }
+  ]
